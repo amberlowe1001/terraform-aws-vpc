@@ -10,7 +10,7 @@
 #  service = "s3"
 #}
 
-data "aws_region" "current" {}
+data "aws_region" "current" "us-east-2" {}
 
 resource "aws_vpc_endpoint" "s3" {
   count = "${var.create_vpc && var.enable_s3_endpoint ? 1 : 0}"
